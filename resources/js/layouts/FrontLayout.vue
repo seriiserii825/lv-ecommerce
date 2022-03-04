@@ -26,7 +26,7 @@
         >
       </el-menu-item>
       <el-menu-item index="5">
-        <a href="#">Logout</a>
+        <a @click.prevent="logout" href="#">Logout</a>
       </el-menu-item>
     </el-menu>
     <slot></slot>
@@ -42,6 +42,9 @@ export default {
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
+    },
+    logout() {
+      localStorage.removeItem("mytoken");
     },
   },
 };

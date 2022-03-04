@@ -6,6 +6,18 @@
 <script>
 export default {
   created() {
+    if (!localStorage.getItem("mytoken")) {
+      this.$notify({
+        type: "error",
+        message: "unauthorized",
+      });
+    }
+
+    axios.defaults.headers.common = {
+      Authorization: `Bearer ${localStorage.getItem("mytoken")}`,
+      "Content-type": "application/json",
+    };
+
     axios
       .get("/api/admin")
       .then((res) => {

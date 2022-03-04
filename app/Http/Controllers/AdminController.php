@@ -8,8 +8,6 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return response([
-            "message" => "admin"
-        ], 200);
+        return response()->json(["count" => "message"]);
     }
 }
