@@ -3799,7 +3799,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  created: function created() {
+    axios.get("/api/admin").then(function (res) {
+      console.log(res, "res");
+    })["catch"](function (error) {
+      console.log(error.response, "error.response");
+    });
+  }
+});
 
 /***/ }),
 
