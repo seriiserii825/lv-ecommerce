@@ -1,0 +1,41 @@
+.btn {
+    font-size: 1.8rem;
+}
+.navbar-brand {
+    font-size: 1.8rem;
+}
+.dropdown-menu {
+    font-size: 1.8rem;
+}
+.form-control {
+    font-size: 1.8rem;
+}
+.tab-content > .tab-pane {
+    padding: 3rem 0;
+}
+.pointer {
+    cursor: pointer;
+    label {
+        cursor: pointer;
+    }
+}
+.app {
+    min-height: 120vh;
+}
+.table-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    color: white;
+    &.success {
+    background-color: #04B439;
+    }
+    &.error {
+    background-color: #F07E00;
+    }
+    &.primary {
+    background-color: #0096F0;
+    }
+}
