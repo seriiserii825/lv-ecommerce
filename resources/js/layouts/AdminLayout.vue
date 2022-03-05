@@ -22,12 +22,10 @@ export default {
     HeaderAdmin,
   },
   created() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
     axios
       .get("/api/admin")
       .then((res) => {
-        console.log(res.status, "res.status");
-        console.log(res, "res");
+        window.scrollTo({ top: 0, behavior: "smooth" });
       })
       .catch((error) => {
         let status = error.response.status;

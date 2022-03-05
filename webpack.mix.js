@@ -1,34 +1,39 @@
-const mix = require('laravel-mix');
-// mix.js('resources/js/app.js', 'public/js')
-//     .version()
-//     .vue();
-// mix.sass('resources/sass/app.scss', 'css').version();
+const mix = require("laravel-mix");
+const path = require("path");
 
 let productionSourceMaps = false;
 
-mix.setPublicPath('public/build')
-    .setResourceRoot('build')
-    .js('resources/js/app.js', 'js').vue()
-    .sass('resources/sass/app.scss', 'css')
+mix.setPublicPath("public/build")
+    .setResourceRoot("build")
+    .js("resources/js/app.js", "js")
+    .vue()
+    .sass("resources/sass/app.scss", "css")
     .version()
     .options({
-        processCssUrls: false
+        processCssUrls: false,
     })
-    .sourceMaps(productionSourceMaps, 'source-map')
+    .sourceMaps(productionSourceMaps, "source-map")
     .browserSync({
-        proxy: 'https://localhost:8088/',
+        proxy: "https://localhost:8088/",
         files: [
-            'public/build/css/app.css',  // Generated .css file
-            'public/build/js/app.js',    // Generated .js file
-            'app/**/*.+(html|php)',          // Generic .html and/or .php files [no specific platform]
-            'resources/js/**/*.vue',          // Generic .html and/or .php files [no specific platform]
-            'resources/views/**/*.php', // Laravel-specific view files
+            "public/build/css/app.css", // Generated .css file
+            "public/build/js/app.js", // Generated .js file
+            "app/**/*.+(html|php)", // Generic .html and/or .php files [no specific platform]
+            "resources/js/**/*.vue", // Generic .html and/or .php files [no specific platform]
+            "resources/views/**/*.php", // Laravel-specific view files
         ],
         notify: {
             styles: {
-                top: 'auto',
-                bottom: '0'
-            }
+                top: "auto",
+                bottom: "0",
+            },
         },
-        open: false
+        open: false,
+    })
+    .webpackConfig({
+        resolve: {
+            alias: {
+                "@": path.resolve("resources/sass"),
+            },
+        },
     });
