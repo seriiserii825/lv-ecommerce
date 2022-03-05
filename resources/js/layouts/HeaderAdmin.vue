@@ -33,11 +33,13 @@ export default {
   methods: {
     logout() {
       axios.post("/logout").then((res) => {
+        this.$store.dispatch("logout");
         this.$notify({
           type: "success",
           message: "Success logout",
         });
         this.$router.push({ name: "login" });
+        window.location = window.location.href;
       });
     },
   },
@@ -62,7 +64,7 @@ export default {
     background: transparent;
   }
   .el-menu-item {
-      border: 0;
+    border: 0;
   }
   &__link {
     display: flex;

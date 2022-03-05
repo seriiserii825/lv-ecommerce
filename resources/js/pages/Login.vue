@@ -4,13 +4,13 @@
       <h2 class="login__title">Login</h2>
       <el-form label-width="120px">
         <el-form-item label="Login">
-          <el-input v-model="form.email"></el-input>
+          <el-input name="email" v-model="form.email"></el-input>
           <p v-if="this.errors && this.errors.email" class="error">
             {{ this.errors.email[0] }}
           </p>
         </el-form-item>
         <el-form-item label="Password">
-          <el-input v-model="form.password"></el-input>
+          <el-input name="password" v-model="form.password"></el-input>
           <p v-if="this.errors && this.errors.password" class="error">
             {{ this.errors.password[0] }}
           </p>
@@ -35,25 +35,15 @@ export default {
     };
   },
   methods: {
-    onSubmit() {
-      axios.get("/sanctum/csrf-cookie").then((response) => {
-        axios
-          .post("/login", this.form)
-          .then((res) => {
-            this.$notify({
-              type: "success",
-              message: "Success logged in",
-            });
-            this.$router.push({ name: "admin.index" });
-          })
-          .catch((error) => {
-            this.$notify({
-              type: "error",
-              message: error.response.data.message,
-            });
-            this.errors = error.response.data.errors;
-          });
+    async onSubmit() {
+      await this.$store.dispatch("login", this.form);
+      this.$notify({
+        type: "success",
+        message: "Success logged in",
       });
+
+      this.$router.push({ name: "admin.index" });
+      window.location = window.location.href;
     },
   },
   components: {

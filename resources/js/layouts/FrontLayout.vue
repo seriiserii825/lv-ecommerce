@@ -10,22 +10,22 @@
           >Home</router-link
         >
       </el-menu-item>
-      <el-menu-item index="2">
+      <el-menu-item v-if="is_auth" index="2">
         <router-link class="front-menu__link" :to="{ name: 'admin.index' }"
           >Admin</router-link
         >
       </el-menu-item>
-      <el-menu-item index="3">
+      <el-menu-item v-if="!is_auth" index="3">
         <router-link class="front-menu__link" :to="{ name: 'login' }"
           >Login</router-link
         >
       </el-menu-item>
-      <el-menu-item index="4">
+      <el-menu-item v-if="!is_auth" index="4">
         <router-link class="front-menu__link" :to="{ name: 'register' }"
           >Register</router-link
         >
       </el-menu-item>
-      <el-menu-item index="5">
+      <el-menu-item v-if="is_auth" index="5">
         <a class="front-menu__link" @click.prevent="logout" href="#">Logout</a>
       </el-menu-item>
     </el-menu>
@@ -39,17 +39,24 @@ export default {
       activeIndex: "1",
     };
   },
+  computed: {
+    is_auth() {
+      return this.$store.getters.isAuthenticated;
+    },
+  },
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
     },
     logout() {
       axios.post("/logout").then((res) => {
+        this.$store.dispatch("logout");
         this.$notify({
           type: "success",
           message: "Success logout",
         });
         this.$router.push({ name: "login" });
+        window.location = window.location.href;
       });
     },
   },
@@ -71,7 +78,7 @@ export default {
   }
   &__link {
     display: block;
-    padding:  0 3rem;
+    padding: 0 3rem;
     font-weight: bold;
     text-decoration: none;
     text-transform: uppercase;

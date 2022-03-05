@@ -8,24 +8,35 @@ import routes from "./routes";
 
 // window.User = User;
 //support vuex
-// import Vuex from "vuex";
+import Vuex from "vuex";
 
-// Vue.use(Vuex);
-// import storeData from "./store/index";
+Vue.use(Vuex);
+import storeData from "./store/index";
 
 Vue.use(VueRouter);
 Vue.use(Element);
 
-// window.Reload = new Vue();
+window.Reload = new Vue();
 
 Vue.component("app-component", require("./layouts/App.vue").default);
 
-// const store = new Vuex.Store(storeData);
+const store = new Vuex.Store(storeData);
 
 const router = new VueRouter(routes);
 
-const app = new Vue({
-    el: "#app",
-    router,
-    // store,
-});
+const VueInstance = () => {
+    new Vue({
+        el: "#app",
+        store,
+        router,
+    });
+};
+
+store
+    .dispatch("checkAuth")
+    .then(() => {
+        VueInstance();
+    })
+    .catch(() => {
+        VueInstance();
+    });

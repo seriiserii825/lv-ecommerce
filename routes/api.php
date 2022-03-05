@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Api\CurrentUserController;
+use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,8 +22,9 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-// Route::post('/login', [AuthController::class, 'login']);
+Route::get('/current_user', [CurrentUserController::class, 'index']);
 
 Route::group(["middleware" => "auth:sanctum"], function () {
     Route::get("/admin", [AdminController::class, "index"]);
+    Route::resource('user', "App\Http\Controllers\Api\UserController");
 });
