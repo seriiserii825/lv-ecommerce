@@ -36,21 +36,24 @@ export default {
   },
   methods: {
     onSubmit() {
-      axios
-        .post("/api/login", this.form)
-        .then((res) => {
-          const token = res.data.token;
-          localStorage.setItem("mytoken", token);
-          this.$router.push({ name: "admin.index" });
-        })
-        .catch((error) => {
-          this.$notify({
-            type: "error",
-            message: error.response.data.message,
+      axios.get("/sanctum/csrf-cookie").then((response) => {
+        axios
+          .post("/login", this.form)
+          .then((res) => {
+            this.$notify({
+              type: "success",
+              message: "Success logged in",
+            });
+            this.$router.push({ name: "admin.index" });
+          })
+          .catch((error) => {
+            this.$notify({
+              type: "error",
+              message: error.response.data.message,
+            });
+            this.errors = error.response.data.errors;
           });
-          this.errors = error.response.data.errors;
-          console.log(this.errors, "this.errors");
-        });
+      });
     },
   },
   components: {

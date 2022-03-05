@@ -44,7 +44,13 @@ export default {
       console.log(key, keyPath);
     },
     logout() {
-      localStorage.removeItem("mytoken");
+      axios.post("/logout").then((res) => {
+        this.$notify({
+          type: "success",
+          message: "Success logout",
+        });
+        this.$router.push({name: "login"});
+      });
     },
   },
 };

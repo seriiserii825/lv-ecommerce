@@ -1,32 +1,12 @@
 <template>
-  <div>
+  <admin-layout>
     <h3>Admin</h3>
-  </div>
+  </admin-layout>
 </template>
 <script>
+import AdminLayout from "../layouts/AdminLayout.vue";
 export default {
-  created() {
-    if (!localStorage.getItem("mytoken")) {
-      this.$notify({
-        type: "error",
-        message: "unauthorized",
-      });
-    }
-
-    axios.defaults.headers.common = {
-      Authorization: `Bearer ${localStorage.getItem("mytoken")}`,
-      "Content-type": "application/json",
-    };
-
-    axios
-      .get("/api/admin")
-      .then((res) => {
-        console.log(res, "res");
-      })
-      .catch((error) => {
-        console.log(error.response, "error.response");
-      });
-  },
+  components: { AdminLayout },
 };
 </script>
 <style lang="scss">
