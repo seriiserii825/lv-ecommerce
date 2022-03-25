@@ -37,12 +37,8 @@ export default {
   data() {
     return {
       activeIndex: "1",
+      is_auth: false,
     };
-  },
-  computed: {
-    is_auth() {
-      return this.$store.getters.isAuthenticated;
-    },
   },
   methods: {
     handleSelect(key, keyPath) {
@@ -58,8 +54,8 @@ export default {
         this.$router.push({ name: "login" });
         window.location = window.location.href;
       });
-    },
-  },
+    }
+  }
 };
 </script>
 <style lang="scss">

@@ -24,19 +24,8 @@ const store = new Vuex.Store(storeData);
 
 const router = new VueRouter(routes);
 
-const VueInstance = () => {
-    new Vue({
-        el: "#app",
-        store,
-        router,
-    });
-};
-
-store
-    .dispatch("checkAuth")
-    .then(() => {
-        VueInstance();
-    })
-    .catch(() => {
-        VueInstance();
-    });
+new Vue({
+    el: "#app",
+    // store,
+    router,
+});
