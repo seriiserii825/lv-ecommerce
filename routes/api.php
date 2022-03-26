@@ -31,6 +31,7 @@ Route::group(["middleware" => "auth:sanctum"], function () {
     Route::resource('user', "App\Http\Controllers\Api\UserController");
     Route::apiResources([
         'media' => 'App\Http\Controllers\Api\MediaController',
+        'category' => 'App\Http\Controllers\Api\CategoryController',
     ]);
 //    Route::get('media-count', 'App\Http\Controllers\Api\MediaController@count');
 });

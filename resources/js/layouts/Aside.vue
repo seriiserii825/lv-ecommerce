@@ -9,17 +9,17 @@
       </el-menu-item>
       <el-submenu index="2">
         <template slot="title"
-          ><i class="el-icon-s-check"></i>Employee(Worker)
+          ><i class="el-icon-s-check"></i>Category
         </template>
         <el-menu-item-group>
           <el-menu-item index="2-1">
-            <router-link :to="{ name: 'admin.index' }">
+            <router-link :to="{ name: 'admin.category.create' }">
               <i class="el-icon-document-add"></i>
               <span>Create</span>
             </router-link>
           </el-menu-item>
           <el-menu-item index="2-2">
-            <router-link :to="{ name: 'admin.index' }" exact>
+            <router-link :to="{ name: 'admin.category' }" exact>
               <i class="el-icon-tickets"></i>
               <span>List</span>
             </router-link>
