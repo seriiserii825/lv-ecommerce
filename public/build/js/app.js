@@ -7859,6 +7859,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -7869,25 +7870,16 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     handleSelect: function handleSelect(key, keyPath) {
       console.log(key, keyPath);
-    },
-    logout: function logout() {
-      var _this = this;
-
-      axios.post("/logout").then(function (res) {
-        _this.$store.dispatch("logout");
-
-        _this.$notify({
-          type: "success",
-          message: "Success logout"
-        });
-
-        _this.$router.push({
-          name: "login"
-        });
-
-        window.location = window.location.href;
-      });
     }
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get('/api/front').then(function (res) {
+      _this.is_auth = res.data.user;
+    })["catch"](function (error) {
+      _this.is_auth = error.response.data.user;
+    });
   }
 });
 
@@ -73647,7 +73639,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".el-menu {\n  margin-bottom: 5rem;\n}\n.front-menu {\n  display: flex;\n  justify-content: flex-end;\n  background-color: #0776A0;\n}\n.front-menu li {\n  padding: 0 !important;\n  height: auto !important;\n  border: 0 !important;\n}\n.front-menu__link {\n  display: block;\n  padding: 0 3rem;\n  font-weight: bold;\n  text-decoration: none;\n  text-transform: uppercase;\n  text-decoration: none;\n  color: white !important;\n  transition: all 0.4s;\n}\n.front-menu__link:hover {\n  background-color: #226078 !important;\n}\n.front-menu__link.router-link-exact-active {\n  background-color: #226078;\n}", "",{"version":3,"sources":["webpack://./resources/js/layouts/FrontLayout.vue","webpack://./resources/sass/_variables.scss"],"names":[],"mappings":"AA8DA;EACE,mBAAA;AA7DF;AA+DA;EACE,aAAA;EACA,yBAAA;EACA,yBC5DQ;ADAV;AA6DE;EACE,qBAAA;EACA,uBAAA;EACA,oBAAA;AA3DJ;AA6DE;EACE,cAAA;EACA,eAAA;EACA,iBAAA;EACA,qBAAA;EACA,yBAAA;EACA,qBAAA;EACA,uBAAA;EACA,oBAAA;AA3DJ;AA4DI;EACE,oCAAA;AA1DN;AA4DI;EACE,yBC9EI;ADoBV","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n@import \"@/_variables\";\n.el-menu {\n  margin-bottom: 5rem;\n}\n.front-menu {\n  display: flex;\n  justify-content: flex-end;\n  background-color: $color_1;\n  li {\n    padding: 0 !important;\n    height: auto !important;\n    border: 0 !important;\n  }\n  &__link {\n    display: block;\n    padding: 0 3rem;\n    font-weight: bold;\n    text-decoration: none;\n    text-transform: uppercase;\n    text-decoration: none;\n    color: white !important;\n    transition: all 0.4s;\n    &:hover {\n      background-color: $color_2 !important;\n    }\n    &.router-link-exact-active {\n      background-color: $color_2;\n    }\n  }\n}\n","// Body\n$body-bg: #f8fafc;\n\n// Typography\n$font-family-sans-serif: 'Nunito', sans-serif;\n$font-size-base: 0.9rem;\n$line-height-base: 1.6;\n\n$color_1: #0776A0;\n$color_2: #226078;\n$color_3: #333;\n$color_4: #3AA6D0\t;\n$color_5: #63AFD0;\n$color_6: #FF8700;\n$color_7: #BF7C30;\n$color_8: #00B74A;\n$color_9: #228A4C;"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".el-menu {\n  margin-bottom: 5rem;\n}\n.front-menu {\n  display: flex;\n  justify-content: flex-end;\n  background-color: #0776A0;\n}\n.front-menu li {\n  padding: 0 !important;\n  height: auto !important;\n  border: 0 !important;\n}\n.front-menu__link {\n  display: block;\n  padding: 0 3rem;\n  font-weight: bold;\n  text-decoration: none;\n  text-transform: uppercase;\n  text-decoration: none;\n  color: white !important;\n  transition: all 0.4s;\n}\n.front-menu__link:hover {\n  background-color: #226078 !important;\n}\n.front-menu__link.router-link-exact-active {\n  background-color: #226078;\n}", "",{"version":3,"sources":["webpack://./resources/js/layouts/FrontLayout.vue","webpack://./resources/sass/_variables.scss"],"names":[],"mappings":"AA2DA;EACI,mBAAA;AA1DJ;AA4DA;EACI,aAAA;EACA,yBAAA;EACA,yBCzDM;ADAV;AA0DI;EACI,qBAAA;EACA,uBAAA;EACA,oBAAA;AAxDR;AA0DI;EACI,cAAA;EACA,eAAA;EACA,iBAAA;EACA,qBAAA;EACA,yBAAA;EACA,qBAAA;EACA,uBAAA;EACA,oBAAA;AAxDR;AAyDQ;EACI,oCAAA;AAvDZ;AAyDQ;EACI,yBC3EF;ADoBV","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n@import \"@/_variables\";\n.el-menu {\n    margin-bottom: 5rem;\n}\n.front-menu {\n    display: flex;\n    justify-content: flex-end;\n    background-color: $color_1;\n    li {\n        padding: 0 !important;\n        height: auto !important;\n        border: 0 !important;\n    }\n    &__link {\n        display: block;\n        padding: 0 3rem;\n        font-weight: bold;\n        text-decoration: none;\n        text-transform: uppercase;\n        text-decoration: none;\n        color: white !important;\n        transition: all 0.4s;\n        &:hover {\n            background-color: $color_2 !important;\n        }\n        &.router-link-exact-active {\n            background-color: $color_2;\n        }\n    }\n}\n","// Body\n$body-bg: #f8fafc;\n\n// Typography\n$font-family-sans-serif: 'Nunito', sans-serif;\n$font-size-base: 0.9rem;\n$line-height-base: 1.6;\n\n$color_1: #0776A0;\n$color_2: #226078;\n$color_3: #333;\n$color_4: #3AA6D0\t;\n$color_5: #63AFD0;\n$color_6: #FF8700;\n$color_7: #BF7C30;\n$color_8: #00B74A;\n$color_9: #228A4C;"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -94600,76 +94592,65 @@ var render = function () {
                   staticClass: "front-menu__link",
                   attrs: { to: { name: "home" } },
                 },
-                [_vm._v("Home")]
+                [_vm._v("Home\n            ")]
               ),
             ],
             1
           ),
           _vm._v(" "),
-          _c(
-            "el-menu-item",
-            { attrs: { index: "2" } },
-            [
-              _c(
-                "router-link",
-                {
-                  staticClass: "front-menu__link",
-                  attrs: { to: { name: "admin.index" } },
-                },
-                [_vm._v("Admin")]
-              ),
-            ],
-            1
-          ),
+          _vm.is_auth
+            ? _c(
+                "el-menu-item",
+                { attrs: { index: "2" } },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "front-menu__link",
+                      attrs: { to: { name: "admin.index" } },
+                    },
+                    [_vm._v("Admin\n            ")]
+                  ),
+                ],
+                1
+              )
+            : _vm._e(),
           _vm._v(" "),
-          _c(
-            "el-menu-item",
-            { attrs: { index: "3" } },
-            [
-              _c(
-                "router-link",
-                {
-                  staticClass: "front-menu__link",
-                  attrs: { to: { name: "login" } },
-                },
-                [_vm._v("Login")]
-              ),
-            ],
-            1
-          ),
+          !_vm.is_auth
+            ? _c(
+                "el-menu-item",
+                { attrs: { index: "3" } },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "front-menu__link",
+                      attrs: { to: { name: "login" } },
+                    },
+                    [_vm._v("Login\n            ")]
+                  ),
+                ],
+                1
+              )
+            : _vm._e(),
           _vm._v(" "),
-          _c(
-            "el-menu-item",
-            { attrs: { index: "4" } },
-            [
-              _c(
-                "router-link",
-                {
-                  staticClass: "front-menu__link",
-                  attrs: { to: { name: "register" } },
-                },
-                [_vm._v("Register")]
-              ),
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("el-menu-item", { attrs: { index: "5" } }, [
-            _c(
-              "a",
-              {
-                staticClass: "front-menu__link",
-                attrs: { href: "#" },
-                on: {
-                  click: function ($event) {
-                    $event.preventDefault()
-                    return _vm.logout.apply(null, arguments)
-                  },
-                },
-              },
-              [_vm._v("Logout")]
-            ),
-          ]),
+          !_vm.is_auth
+            ? _c(
+                "el-menu-item",
+                { attrs: { index: "4" } },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "front-menu__link",
+                      attrs: { to: { name: "register" } },
+                    },
+                    [_vm._v("Register\n            ")]
+                  ),
+                ],
+                1
+              )
+            : _vm._e(),
         ],
         1
       ),

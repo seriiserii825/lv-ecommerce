@@ -24,9 +24,9 @@ use Illuminate\Support\Facades\Route;
 
 //Route::post('/register', [AuthController::class, 'register']);
 //Route::post('/login', [AuthController::class, 'login']);
+Route::get('/front', [\App\Http\Controllers\FrontController::class, 'index']);
 
 Route::group(["middleware" => "auth:sanctum"], function () {
-    Route::post('/logout', [AuthController::class, 'logout']);
     Route::get("/admin", [AdminController::class, "index"]);
     Route::resource('user', "App\Http\Controllers\Api\UserController");
 });
