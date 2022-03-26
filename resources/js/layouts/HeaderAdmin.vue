@@ -2,12 +2,12 @@
   <div class="header-admin">
     <el-menu class="el-menu-demo main-menu" mode="horizontal">
       <el-menu-item index="1">
-        <router-link class="main-menu__link" :to="{ name: 'admin.index' }">
+        <router-link class="main-menu__link" :to="{ name: 'admin.media' }">
           <el-button type="success">List media</el-button>
         </router-link>
       </el-menu-item>
       <el-menu-item index="2">
-        <router-link class="main-menu__link" :to="{ name: 'admin.index' }">
+        <router-link class="main-menu__link" :to="{ name: 'admin.media.create' }">
           <el-button type="primary">Add media</el-button>
         </router-link>
       </el-menu-item>

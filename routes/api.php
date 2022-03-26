@@ -29,4 +29,8 @@ Route::get('/front', [\App\Http\Controllers\FrontController::class, 'index']);
 Route::group(["middleware" => "auth:sanctum"], function () {
     Route::get("/admin", [AdminController::class, "index"]);
     Route::resource('user', "App\Http\Controllers\Api\UserController");
+    Route::apiResources([
+        'media' => 'App\Http\Controllers\Api\MediaController',
+    ]);
+//    Route::get('media-count', 'App\Http\Controllers\Api\MediaController@count');
 });
