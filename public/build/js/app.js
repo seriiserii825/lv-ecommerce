@@ -7940,8 +7940,6 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.post("/logout").then(function (res) {
-        _this.$store.dispatch("logout");
-
         _this.$notify({
           type: "success",
           message: "Success logout"
@@ -7950,8 +7948,6 @@ __webpack_require__.r(__webpack_exports__);
         _this.$router.push({
           name: "login"
         });
-
-        window.location = window.location.href;
       });
     }
   }
@@ -8062,26 +8058,23 @@ __webpack_require__.r(__webpack_exports__);
     onSubmit: function onSubmit() {
       var _this = this;
 
-      axios.post("/api/login", this.form).then(function (res) {
-        var token = res.data.token;
-        localStorage.setItem('auth_token', token);
-        var user = res.data.user;
-        localStorage.setItem('user', user);
-
-        _this.$router.push({
-          name: 'home'
-        });
-      })["catch"](function (error) {
-        var error_data = error.response.data;
-
-        if (error_data.message) {
-          _this.$notify({
-            type: "error",
-            message: error_data.message
+      axios.get('/sanctum/csrf-cookie').then(function (response) {
+        axios.post("/login", _this.form).then(function (res) {
+          _this.$router.push({
+            name: 'admin.index'
           });
-        }
+        })["catch"](function (error) {
+          var error_data = error.response.data;
 
-        _this.errors = error_data.errors;
+          if (error_data.message) {
+            _this.$notify({
+              type: "error",
+              message: error_data.message
+            });
+          }
+
+          _this.errors = error_data.errors;
+        });
       });
     }
   },
@@ -8238,6 +8231,7 @@ try {
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+axios.defaults.withCredentials = true;
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
@@ -73680,7 +73674,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".el-header {\n  text-align: right;\n}\n.el-header__title {\n  font-size: 1.7rem;\n}\n.header-admin {\n  display: flex;\n  justify-content: space-between;\n  margin-bottom: 0 !important;\n  background-color: #333;\n  border: none !important;\n}\n.header-admin .el-menu {\n  margin-bottom: 0;\n  background: transparent;\n}\n.header-admin .el-menu-item {\n  border: 0;\n}\n.header-admin__link {\n  display: flex;\n  align-items: center;\n  text-decoration: none;\n}\n.header-admin__link:hover {\n  text-decoration: none;\n  color: #ccc !important;\n}", "",{"version":3,"sources":["webpack://./resources/js/layouts/HeaderAdmin.vue"],"names":[],"mappings":"AAgDA;EACE,iBAAA;AA/CF;AAgDE;EACE,iBAAA;AA9CJ;AAkDA;EACE,aAAA;EACA,8BAAA;EACA,2BAAA;EACA,sBAAA;EACA,uBAAA;AA/CF;AAgDE;EACE,gBAAA;EACA,uBAAA;AA9CJ;AAgDE;EACE,SAAA;AA9CJ;AAgDE;EACE,aAAA;EACA,mBAAA;EACA,qBAAA;AA9CJ;AA+CI;EACE,qBAAA;EACA,sBAAA;AA7CN","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.el-header {\n  text-align: right;\n  &__title {\n    font-size: 1.7rem;\n  }\n}\n\n.header-admin {\n  display: flex;\n  justify-content: space-between;\n  margin-bottom: 0 !important;\n  background-color: #333;\n  border: none !important;\n  .el-menu {\n    margin-bottom: 0;\n    background: transparent;\n  }\n  .el-menu-item {\n    border: 0;\n  }\n  &__link {\n    display: flex;\n    align-items: center;\n    text-decoration: none;\n    &:hover {\n      text-decoration: none;\n      color: #ccc !important;\n    }\n  }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".el-header {\n  text-align: right;\n}\n.el-header__title {\n  font-size: 1.7rem;\n}\n.header-admin {\n  display: flex;\n  justify-content: space-between;\n  margin-bottom: 0 !important;\n  background-color: #333;\n  border: none !important;\n}\n.header-admin .el-menu {\n  margin-bottom: 0;\n  background: transparent;\n}\n.header-admin .el-menu-item {\n  border: 0;\n}\n.header-admin__link {\n  display: flex;\n  align-items: center;\n  text-decoration: none;\n}\n.header-admin__link:hover {\n  text-decoration: none;\n  color: #ccc !important;\n}", "",{"version":3,"sources":["webpack://./resources/js/layouts/HeaderAdmin.vue"],"names":[],"mappings":"AA8CA;EACE,iBAAA;AA7CF;AA8CE;EACE,iBAAA;AA5CJ;AAgDA;EACE,aAAA;EACA,8BAAA;EACA,2BAAA;EACA,sBAAA;EACA,uBAAA;AA7CF;AA8CE;EACE,gBAAA;EACA,uBAAA;AA5CJ;AA8CE;EACE,SAAA;AA5CJ;AA8CE;EACE,aAAA;EACA,mBAAA;EACA,qBAAA;AA5CJ;AA6CI;EACE,qBAAA;EACA,sBAAA;AA3CN","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.el-header {\n  text-align: right;\n  &__title {\n    font-size: 1.7rem;\n  }\n}\n\n.header-admin {\n  display: flex;\n  justify-content: space-between;\n  margin-bottom: 0 !important;\n  background-color: #333;\n  border: none !important;\n  .el-menu {\n    margin-bottom: 0;\n    background: transparent;\n  }\n  .el-menu-item {\n    border: 0;\n  }\n  &__link {\n    display: flex;\n    align-items: center;\n    text-decoration: none;\n    &:hover {\n      text-decoration: none;\n      color: #ccc !important;\n    }\n  }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -73707,7 +73701,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".login {\n  margin: 0 auto;\n  max-width: 50rem;\n}\n.login__title {\n  margin: 4rem;\n  text-align: center;\n}", "",{"version":3,"sources":["webpack://./resources/js/pages/Login.vue"],"names":[],"mappings":"AA+DA;EACI,cAAA;EACA,gBAAA;AA9DJ;AA+DI;EACI,YAAA;EACA,kBAAA;AA7DR","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.login {\n    margin: 0 auto;\n    max-width: 50rem;\n    &__title {\n        margin: 4rem;\n        text-align: center;\n    }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".login {\n  margin: 0 auto;\n  max-width: 50rem;\n}\n.login__title {\n  margin: 4rem;\n  text-align: center;\n}", "",{"version":3,"sources":["webpack://./resources/js/pages/Login.vue"],"names":[],"mappings":"AA6DA;EACI,cAAA;EACA,gBAAA;AA5DJ;AA6DI;EACI,YAAA;EACA,kBAAA;AA3DR","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.login {\n    margin: 0 auto;\n    max-width: 50rem;\n    &__title {\n        margin: 4rem;\n        text-align: center;\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -94612,78 +94606,70 @@ var render = function () {
             1
           ),
           _vm._v(" "),
-          _vm.is_auth
-            ? _c(
-                "el-menu-item",
-                { attrs: { index: "2" } },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "front-menu__link",
-                      attrs: { to: { name: "admin.index" } },
-                    },
-                    [_vm._v("Admin")]
-                  ),
-                ],
-                1
-              )
-            : _vm._e(),
+          _c(
+            "el-menu-item",
+            { attrs: { index: "2" } },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "front-menu__link",
+                  attrs: { to: { name: "admin.index" } },
+                },
+                [_vm._v("Admin")]
+              ),
+            ],
+            1
+          ),
           _vm._v(" "),
-          !_vm.is_auth
-            ? _c(
-                "el-menu-item",
-                { attrs: { index: "3" } },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "front-menu__link",
-                      attrs: { to: { name: "login" } },
-                    },
-                    [_vm._v("Login")]
-                  ),
-                ],
-                1
-              )
-            : _vm._e(),
+          _c(
+            "el-menu-item",
+            { attrs: { index: "3" } },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "front-menu__link",
+                  attrs: { to: { name: "login" } },
+                },
+                [_vm._v("Login")]
+              ),
+            ],
+            1
+          ),
           _vm._v(" "),
-          !_vm.is_auth
-            ? _c(
-                "el-menu-item",
-                { attrs: { index: "4" } },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "front-menu__link",
-                      attrs: { to: { name: "register" } },
-                    },
-                    [_vm._v("Register")]
-                  ),
-                ],
-                1
-              )
-            : _vm._e(),
+          _c(
+            "el-menu-item",
+            { attrs: { index: "4" } },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "front-menu__link",
+                  attrs: { to: { name: "register" } },
+                },
+                [_vm._v("Register")]
+              ),
+            ],
+            1
+          ),
           _vm._v(" "),
-          _vm.is_auth
-            ? _c("el-menu-item", { attrs: { index: "5" } }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "front-menu__link",
-                    attrs: { href: "#" },
-                    on: {
-                      click: function ($event) {
-                        $event.preventDefault()
-                        return _vm.logout.apply(null, arguments)
-                      },
-                    },
+          _c("el-menu-item", { attrs: { index: "5" } }, [
+            _c(
+              "a",
+              {
+                staticClass: "front-menu__link",
+                attrs: { href: "#" },
+                on: {
+                  click: function ($event) {
+                    $event.preventDefault()
+                    return _vm.logout.apply(null, arguments)
                   },
-                  [_vm._v("Logout")]
-                ),
-              ])
-            : _vm._e(),
+                },
+              },
+              [_vm._v("Logout")]
+            ),
+          ]),
         ],
         1
       ),

@@ -1,3 +1,51 @@
+## install sanctum
+
+```
+composer require laravel/sanctum
+```
+
+## publish configuration
+
+```
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+```
+
+## run db migrations
+
+```
+php artisan migrate
+```
+
+## app/Http/Kernel.php
+
+```
+'api' => [
+    \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+    'throttle:api',
+    \Illuminate\Routing\Middleware\SubstituteBindings::class,
+],
+```
+
+## add trait in User model
+
+```
+use Laravel\Sanctum\HasApiTokens;
+```
+
+## create routes
+
+### Routes for login and register will be created automaticaly
+
+```
+Route::group(["middleware" => "auth:sanctum"], function () {
+    Route::get("/admin", [AdminController::class, "index"]);
+    Route::resource('user', "App\Http\Controllers\Api\UserController");
+});
+```
+
+## login vue
+
+```
 <template>
     <front-layout>
         <div class="login">
@@ -68,3 +116,4 @@ export default {
     }
 }
 </style>
+```

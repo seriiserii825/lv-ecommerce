@@ -10,22 +10,22 @@
           >Home</router-link
         >
       </el-menu-item>
-      <el-menu-item v-if="is_auth" index="2">
+      <el-menu-item index="2">
         <router-link class="front-menu__link" :to="{ name: 'admin.index' }"
           >Admin</router-link
         >
       </el-menu-item>
-      <el-menu-item v-if="!is_auth" index="3">
+      <el-menu-item  index="3">
         <router-link class="front-menu__link" :to="{ name: 'login' }"
           >Login</router-link
         >
       </el-menu-item>
-      <el-menu-item v-if="!is_auth" index="4">
+      <el-menu-item  index="4">
         <router-link class="front-menu__link" :to="{ name: 'register' }"
           >Register</router-link
         >
       </el-menu-item>
-      <el-menu-item v-if="is_auth" index="5">
+      <el-menu-item index="5">
         <a class="front-menu__link" @click.prevent="logout" href="#">Logout</a>
       </el-menu-item>
     </el-menu>
