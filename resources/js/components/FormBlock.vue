@@ -22,5 +22,8 @@ export default {
     &__content {
         padding: 1rem 3rem;
     }
+    &__editor {
+        margin-bottom: 8rem;
+    }
 }
 </style>
