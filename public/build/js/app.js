@@ -9039,6 +9039,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -9049,11 +9062,14 @@ __webpack_require__.r(__webpack_exports__);
     return {
       form: {
         title: "",
-        slug: ""
+        slug: "",
+        image: "",
+        category: ""
       },
       errors: {},
       text: '',
-      markdownContent: ''
+      markdownContent: '',
+      categories: []
     };
   },
   components: {
@@ -9073,9 +9089,7 @@ __webpack_require__.r(__webpack_exports__);
     onSubmit: function onSubmit() {
       var _this = this;
 
-      axios.post("/api/category", this.form).then(function (res) {
-        console.log(res, "res");
-
+      axios.post("/api/post", this.form).then(function (res) {
         _this.$notify({
           type: "success",
           message: "Post was created"
@@ -9088,6 +9102,16 @@ __webpack_require__.r(__webpack_exports__);
         _this.errors = error.response.data.errors;
       });
     }
+  },
+  mounted: function mounted() {
+    var _this2 = this;
+
+    axios.get("/api/category").then(function (res) {
+      _this2.categories = res.data.data;
+      _this2.form.category = _this2.categories[0].title;
+    })["catch"](function (error) {
+      return console.log(error, 'error');
+    });
   }
 });
 
@@ -98872,32 +98896,70 @@ var render = function () {
                 1
               ),
               _vm._v(" "),
-              _c("el-row", [
-                _c(
-                  "div",
-                  { staticClass: "form-block__editor" },
-                  [
-                    _c("label", [_vm._v("Text")]),
-                    _vm._v(" "),
-                    _c("m-editor", {
-                      attrs: {
-                        debounce: true,
-                        "debounce-wait": 500,
-                        theme: "dark",
-                      },
-                      on: { "on-change": _vm.handleChange },
-                      model: {
-                        value: _vm.text,
-                        callback: function ($$v) {
-                          _vm.text = $$v
+              _c(
+                "el-row",
+                [
+                  _c(
+                    "el-form-item",
+                    { attrs: { label: "Category" } },
+                    [
+                      _c(
+                        "el-select",
+                        {
+                          attrs: { placeholder: "Select" },
+                          model: {
+                            value: _vm.form.category,
+                            callback: function ($$v) {
+                              _vm.$set(_vm.form, "category", $$v)
+                            },
+                            expression: "form.category",
+                          },
                         },
-                        expression: "text",
-                      },
-                    }),
-                  ],
-                  1
-                ),
-              ]),
+                        _vm._l(_vm.categories, function (item) {
+                          return _c("el-option", {
+                            key: item.id,
+                            attrs: { label: item.title, value: item.id },
+                          })
+                        }),
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-row",
+                [
+                  _c("el-form-item", { attrs: { label: "Text" } }, [
+                    _c(
+                      "div",
+                      { staticClass: "form-block__editor" },
+                      [
+                        _c("m-editor", {
+                          attrs: {
+                            debounce: true,
+                            "debounce-wait": 500,
+                            theme: "dark",
+                          },
+                          on: { "on-change": _vm.handleChange },
+                          model: {
+                            value: _vm.text,
+                            callback: function ($$v) {
+                              _vm.text = $$v
+                            },
+                            expression: "text",
+                          },
+                        }),
+                      ],
+                      1
+                    ),
+                  ]),
+                ],
+                1
+              ),
               _vm._v(" "),
               _c(
                 "el-row",
@@ -98920,7 +98982,7 @@ var render = function () {
                                 },
                               },
                             },
-                            [_vm._v("Create\n                            ")]
+                            [_vm._v("Create\n                        ")]
                           ),
                         ],
                         1

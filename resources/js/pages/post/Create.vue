@@ -12,7 +12,7 @@
                         <el-form-item label="Title">
                             <el-input @change="titleChange" v-model="form.title"></el-input>
                             <small class="form--error" v-if="errors && errors.title">{{
-                                errors.title[0]
+                                    errors.title[0]
                                 }}</small>
                         </el-form-item>
                     </el-col>
@@ -20,23 +20,36 @@
                         <el-form-item label="Slug">
                             <el-input v-model="form.slug"></el-input>
                             <small class="form--error" v-if="errors && errors.slug">{{
-                                errors.slug[0]
+                                    errors.slug[0]
                                 }}</small>
                         </el-form-item>
                     </el-col>
                 </el-row>
                 <el-row>
-                    <div class="form-block__editor">
-                        <label>Text</label>
-                        <m-editor
-                            v-model="text"
-                            :debounce="true"
-                            :debounce-wait="500"
-                            theme="dark"
-                            @on-change="handleChange"
-                        />
-<!--                        <div class="m-editor-preview" v-html="markdownContent"></div>-->
-                    </div>
+                    <el-form-item label="Category">
+                        <el-select v-model="form.category" placeholder="Select">
+                            <el-option
+                                v-for="item in categories"
+                                :key="item.id"
+                                :label="item.title"
+                                :value="item.id">
+                            </el-option>
+                        </el-select>
+                    </el-form-item>
+                </el-row>
+                <el-row>
+                    <el-form-item label="Text">
+                        <div class="form-block__editor">
+                            <m-editor
+                                v-model="text"
+                                :debounce="true"
+                                :debounce-wait="500"
+                                theme="dark"
+                                @on-change="handleChange"
+                            />
+                            <!--                        <div class="m-editor-preview" v-html="markdownContent"></div>-->
+                        </div>
+                    </el-form-item>
                 </el-row>
                 <el-row>
                     <el-col :span="6">
@@ -64,10 +77,13 @@ export default {
             form: {
                 title: "",
                 slug: "",
+                image: "",
+                category: ""
             },
             errors: {},
             text: '',
-            markdownContent: ''
+            markdownContent: '',
+            categories: [],
         };
     },
     components: {
@@ -86,9 +102,8 @@ export default {
         },
         onSubmit() {
             axios
-                .post("/api/category", this.form)
+                .post("/api/post", this.form)
                 .then((res) => {
-                    console.log(res, "res");
                     this.$notify({
                         type: "success",
                         message: "Post was created",
@@ -100,5 +115,11 @@ export default {
                 });
         },
     },
+    mounted() {
+        axios.get("/api/category").then(res => {
+            this.categories = res.data.data;
+            this.form.category = this.categories[0].title;
+        }).catch(error => console.log(error, 'error'));
+    }
 };
 </script>
