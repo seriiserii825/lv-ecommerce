@@ -1,5 +1,6 @@
 import authRoutes from "./routes/authRoutes";
 import categoryRoutes from "./routes/categoryRoutes";
+import postRoutes from "./routes/postRoutes";
 import mediaRoutes from "./routes/mediaRoutes";
 
 const routes = {
@@ -8,6 +9,7 @@ const routes = {
         ...authRoutes,
         ...mediaRoutes,
         ...categoryRoutes,
+        ...postRoutes,
         {path: "*", redirect: "/"}
     ],
 };
