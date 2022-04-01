@@ -33,6 +33,7 @@ Route::group(["middleware" => "auth:sanctum"], function () {
         'media' => 'App\Http\Controllers\Api\MediaController',
         'category' => 'App\Http\Controllers\Api\CategoryController',
         'post' => 'App\Http\Controllers\Api\PostController',
+        'type' => 'App\Http\Controllers\Api\TypeController',
     ]);
 //    Route::get('media-count', 'App\Http\Controllers\Api\MediaController@count');
 });
