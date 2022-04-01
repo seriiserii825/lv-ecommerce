@@ -9702,14 +9702,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -9717,8 +9709,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: {
-        title: "",
-        slug: ""
+        title: ""
       },
       errors: {}
     };
@@ -9729,23 +9720,17 @@ __webpack_require__.r(__webpack_exports__);
     FormComponent: _components_FormComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   methods: {
-    titleChange: function titleChange() {
-      var title = this.form.title.toLowerCase();
-      this.form.slug = title.replace(/ /, "-");
-    },
     onSubmit: function onSubmit() {
       var _this = this;
 
-      axios.post("/api/category", this.form).then(function (res) {
-        console.log(res, "res");
-
+      axios.put("/api/type/" + this.$route.params.id, this.form).then(function (res) {
         _this.$notify({
           type: "success",
           message: "Post was created"
         });
 
         _this.$router.push({
-          name: "admin.category"
+          name: "admin.type"
         });
       })["catch"](function (error) {
         _this.errors = error.response.data.errors;
@@ -9755,8 +9740,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this2 = this;
 
-    axios.get("/api/category/" + this.$route.params.id).then(function (res) {
-      console.log(res, 'res');
+    axios.get("/api/type/" + this.$route.params.id).then(function (res) {
       _this2.form = res.data.data;
     })["catch"](function (error) {
       _this2.errors = error.response.data.errors;
@@ -100966,10 +100950,10 @@ var render = function () {
         [
           _c(
             "router-link",
-            { attrs: { to: { name: "admin.categories" } } },
+            { attrs: { to: { name: "admin.type" } } },
             [
               _c("el-button", { attrs: { type: "success" } }, [
-                _vm._v("All categories"),
+                _vm._v("All types"),
               ]),
             ],
             1
@@ -100980,7 +100964,7 @@ var render = function () {
       _vm._v(" "),
       _c(
         "form-block",
-        { attrs: { title: "Edit category" } },
+        { attrs: { title: "New type" } },
         [
           _c(
             "el-form",
@@ -100999,7 +100983,6 @@ var render = function () {
                         { attrs: { label: "Title" } },
                         [
                           _c("el-input", {
-                            on: { change: _vm.titleChange },
                             model: {
                               value: _vm.form.title,
                               callback: function ($$v) {
@@ -101012,36 +100995,6 @@ var render = function () {
                           _vm.errors && _vm.errors.title
                             ? _c("small", { staticClass: "form--error" }, [
                                 _vm._v(_vm._s(_vm.errors.title[0])),
-                              ])
-                            : _vm._e(),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "el-col",
-                    { attrs: { span: 6 } },
-                    [
-                      _c(
-                        "el-form-item",
-                        { attrs: { label: "Slug" } },
-                        [
-                          _c("el-input", {
-                            model: {
-                              value: _vm.form.slug,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.form, "slug", $$v)
-                              },
-                              expression: "form.slug",
-                            },
-                          }),
-                          _vm._v(" "),
-                          _vm.errors && _vm.errors.slug
-                            ? _c("small", { staticClass: "form--error" }, [
-                                _vm._v(_vm._s(_vm.errors.slug[0])),
                               ])
                             : _vm._e(),
                         ],
@@ -101075,7 +101028,7 @@ var render = function () {
                                 },
                               },
                             },
-                            [_vm._v("Create\n            ")]
+                            [_vm._v("Create\n                        ")]
                           ),
                         ],
                         1

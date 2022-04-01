@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTypeRequest;
+use App\Http\Requests\UpdateTypeRequest;
 use App\Http\Resources\TypeResource;
 use App\Models\Type;
 use Illuminate\Http\Request;
@@ -34,11 +35,10 @@ class TypeController extends Controller
      * Display the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Type $type)
     {
-        //
+        return new TypeResource($type);
     }
 
     /**
@@ -46,11 +46,11 @@ class TypeController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateTypeRequest $request, Type $type)
     {
-        //
+        $type->update($request->validated());
+        return new TypeResource($type);
     }
 
     /**
@@ -59,8 +59,9 @@ class TypeController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Type $type)
     {
-        //
+        $type->delete();
+        return response()->noContent();
     }
 }
