@@ -27,7 +27,7 @@ class StorePostRequest extends FormRequest
             'title' => 'required|string',
             'slug' => 'required|string|unique:posts',
             'image' => 'required|string',
-            'category' => 'required|integer',
+            'category_id' => 'required|integer',
             'text' => 'required|string',
         ];
     }
