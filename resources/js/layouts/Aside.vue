@@ -64,6 +64,25 @@
                     </el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
+            <el-submenu index="5">
+                <template slot="title"
+                ><i class="el-icon-s-check"></i>Portfolio
+                </template>
+                <el-menu-item-group>
+                    <el-menu-item index="5-1">
+                        <router-link :to="{ name: 'admin.portfolio.create' }">
+                            <i class="el-icon-document-add"></i>
+                            <span>Create</span>
+                        </router-link>
+                    </el-menu-item>
+                    <el-menu-item index="5-2">
+                        <router-link :to="{ name: 'admin.portfolio' }" exact>
+                            <i class="el-icon-tickets"></i>
+                            <span>List</span>
+                        </router-link>
+                    </el-menu-item>
+                </el-menu-item-group>
+            </el-submenu>
         </el-menu>
     </el-aside>
 </template>
