@@ -8025,6 +8025,68 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/front/HeaderFront.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/front/HeaderFront.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/layouts/AdminLayout.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/layouts/AdminLayout.vue?vue&type=script&lang=js& ***!
@@ -75870,7 +75932,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".main-header {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: white;\n  border-top: 1rem solid #778492;\n  box-shadow: 0 2px 8px -4px rgba(0, 0, 0, 0.2);\n}\n.main-header .container {\n  position: relative;\n}\n.main-header__wrap {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 3rem 0;\n}\n@media screen and (max-width: 768px) {\n.main-header__wrap {\n    flex-wrap: wrap;\n    flex-direction: column;\n    justify-content: center;\n}\n}\n.main-header .logo {\n  position: relative;\n  margin-right: 3rem;\n  width: 18rem;\n  height: 18rem;\n  z-index: 2;\n  border-radius: 50%;\n  overflow: hidden;\n  transition: all 0.4s;\n}\n@media screen and (max-width: 768px) {\n.main-header .logo {\n    margin-right: 0;\n}\n}\n.main-header .logo:hover {\n  filter: blur(0.1rem) grayscale(1);\n  transform: scale(0.9);\n}\n.main-header .logo img {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n@media screen and (max-width: 768px) {\n.main-header__socials {\n    margin-bottom: 3rem;\n    justify-content: center;\n}\n}\n.main-header__profile {\n  margin-right: auto;\n}\n@media screen and (max-width: 768px) {\n.main-header__profile {\n    margin-right: 0;\n}\n}\n.main-header .btn {\n  margin-left: 1rem;\n}\n@media screen and (max-width: 768px) {\n.profile {\n    text-align: center;\n}\n}\n.profile__title {\n  font-size: 3.8rem;\n  margin-bottom: 0.5rem;\n  margin-top: 3rem;\n}\n.profile__subtitle {\n  margin-bottom: 1.5rem;\n  font-weight: 400;\n  font-size: 2.4rem;\n  color: #778492;\n}\n.socials {\n  display: flex;\n  align-items: center;\n}\n.socials a {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 3.6rem;\n  height: 3.6rem;\n  background-color: #999999;\n  border-radius: 50%;\n  transition: all 0.4s;\n}\n.socials a:hover {\n  background: green;\n}\n.socials a svg {\n  width: 2rem;\n  height: auto;\n  fill: white;\n}", "",{"version":3,"sources":["webpack://./resources/js/components/front/HeaderFront.vue"],"names":[],"mappings":"AA2CA;EACI,kBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,uBAAA;EACA,8BAAA;EACA,6CAAA;AA1CJ;AA2CI;EACI,kBAAA;AAzCR;AA2CI;EACI,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,eAAA;AAzCR;AA0CQ;AALJ;IAMQ,eAAA;IACA,sBAAA;IACA,uBAAA;AAvCV;AACF;AAyCI;EACI,kBAAA;EACA,kBAAA;EACA,YAAA;EACA,aAAA;EACA,UAAA;EACA,kBAAA;EACA,gBAAA;EACA,oBAAA;AAvCR;AAwCQ;AATJ;IAUQ,eAAA;AArCV;AACF;AAsCQ;EACI,iCAAA;EACA,qBAAA;AApCZ;AAsCQ;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,WAAA;EACA,YAAA;EACA,oBAAA;KAAA,iBAAA;AApCZ;AAwCQ;AADJ;IAEQ,mBAAA;IACA,uBAAA;AArCV;AACF;AAuCI;EACI,kBAAA;AArCR;AAsCQ;AAFJ;IAGQ,eAAA;AAnCV;AACF;AAqCI;EACI,iBAAA;AAnCR;AAuCI;AADJ;IAEQ,kBAAA;AAnCN;AACF;AAoCI;EACI,iBAAA;EACA,qBAAA;EACA,gBAAA;AAlCR;AAoCI;EACI,qBAAA;EACA,gBAAA;EACA,iBAAA;EACA,cAAA;AAlCR;AAqCA;EACI,aAAA;EACA,mBAAA;AAlCJ;AAmCI;EACI,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,aAAA;EACA,cAAA;EACA,yBAAA;EACA,kBAAA;EACA,oBAAA;AAjCR;AAkCQ;EACI,iBAAA;AAhCZ;AAkCQ;EACI,WAAA;EACA,YAAA;EACA,WAAA;AAhCZ","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.main-header {\n    position: relative;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-color: white;\n    border-top: 1rem solid #778492;\n    box-shadow: 0 2px 8px -4px rgba(0, 0, 0, 0.2);\n    .container {\n        position: relative;\n    }\n    &__wrap {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        padding: 3rem 0;\n        @media screen and (max-width: 768px) {\n            flex-wrap: wrap;\n            flex-direction: column;\n            justify-content: center;\n        }\n    }\n    .logo {\n        position: relative;\n        margin-right: 3rem;\n        width: 18rem;\n        height: 18rem;\n        z-index: 2;\n        border-radius: 50%;\n        overflow: hidden;\n        transition: all .4s;\n        @media screen and (max-width: 768px) {\n            margin-right: 0;\n        }\n        &:hover {\n            filter: blur(0.1rem) grayscale(1);\n            transform: scale(0.9);\n        }\n        img {\n            position: absolute;\n            top: 0;\n            left: 0;\n            width: 100%;\n            height: 100%;\n            object-fit: cover;\n        }\n    }\n    &__socials {\n        @media screen and (max-width: 768px) {\n            margin-bottom: 3rem;\n            justify-content: center;\n        }\n    }\n    &__profile {\n        margin-right: auto;\n        @media screen and (max-width: 768px) {\n            margin-right: 0;\n        }\n    }\n    .btn {\n        margin-left: 1rem;\n    }\n}\n.profile {\n    @media screen and (max-width: 768px) {\n        text-align: center;\n    }\n    &__title {\n        font-size: 3.8rem;\n        margin-bottom: 0.5rem;\n        margin-top: 3rem;\n    }\n    &__subtitle {\n        margin-bottom: 1.5rem;\n        font-weight: 400;\n        font-size: 2.4rem;\n        color: #778492;\n    }\n}\n.socials {\n    display: flex;\n    align-items: center;\n    a {\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        width: 3.6rem;\n        height: 3.6rem;\n        background-color: darken(#ccc, 20%);\n        border-radius: 50%;\n        transition: all .4s;\n        &:hover {\n            background: green;\n        }\n        svg {\n            width: 2rem;\n            height: auto;\n            fill: white;\n        }\n    }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".main-header {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: white;\n  border-top: 1rem solid #778492;\n  box-shadow: 0 2px 8px -4px rgba(0, 0, 0, 0.2);\n}\n.main-header .container {\n  position: relative;\n}\n.main-header__wrap {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 3rem 0;\n}\n@media screen and (max-width: 768px) {\n.main-header__wrap {\n    flex-wrap: wrap;\n    flex-direction: column;\n    justify-content: center;\n}\n}\n.main-header .logo {\n  position: relative;\n  margin-right: 3rem;\n  width: 18rem;\n  height: 18rem;\n  z-index: 2;\n  border-radius: 50%;\n  overflow: hidden;\n  transition: all 0.4s;\n}\n@media screen and (max-width: 768px) {\n.main-header .logo {\n    margin-right: 0;\n}\n}\n.main-header .logo:hover {\n  filter: blur(0.1rem) grayscale(1);\n  transform: scale(0.9);\n}\n.main-header .logo img {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n@media screen and (max-width: 768px) {\n.main-header__socials {\n    margin-bottom: 3rem;\n    justify-content: center;\n}\n}\n.main-header__profile {\n  margin-right: auto;\n}\n@media screen and (max-width: 768px) {\n.main-header__profile {\n    margin-right: 0;\n}\n}\n.main-header .btn {\n  margin-left: 1rem;\n}\n@media screen and (max-width: 768px) {\n.profile {\n    text-align: center;\n}\n}\n.profile__title {\n  font-size: 3.8rem;\n  margin-bottom: 0.5rem;\n  margin-top: 3rem;\n}\n.profile__subtitle {\n  margin-bottom: 1.5rem;\n  font-weight: 400;\n  font-size: 2.4rem;\n  color: #778492;\n}\n.socials {\n  display: flex;\n  align-items: center;\n}\n.socials a {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 3.6rem;\n  height: 3.6rem;\n  background-color: #999999;\n  border-radius: 50%;\n  transition: all 0.4s;\n}\n.socials a:hover {\n  background: green;\n}\n.socials a svg {\n  width: 2rem;\n  height: auto;\n  fill: white;\n}", "",{"version":3,"sources":["webpack://./resources/js/components/front/HeaderFront.vue"],"names":[],"mappings":"AAqDA;EACI,kBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,uBAAA;EACA,8BAAA;EACA,6CAAA;AApDJ;AAqDI;EACI,kBAAA;AAnDR;AAqDI;EACI,aAAA;EACA,8BAAA;EACA,mBAAA;EACA,eAAA;AAnDR;AAoDQ;AALJ;IAMQ,eAAA;IACA,sBAAA;IACA,uBAAA;AAjDV;AACF;AAmDI;EACI,kBAAA;EACA,kBAAA;EACA,YAAA;EACA,aAAA;EACA,UAAA;EACA,kBAAA;EACA,gBAAA;EACA,oBAAA;AAjDR;AAkDQ;AATJ;IAUQ,eAAA;AA/CV;AACF;AAgDQ;EACI,iCAAA;EACA,qBAAA;AA9CZ;AAgDQ;EACI,kBAAA;EACA,MAAA;EACA,OAAA;EACA,WAAA;EACA,YAAA;EACA,oBAAA;KAAA,iBAAA;AA9CZ;AAkDQ;AADJ;IAEQ,mBAAA;IACA,uBAAA;AA/CV;AACF;AAiDI;EACI,kBAAA;AA/CR;AAgDQ;AAFJ;IAGQ,eAAA;AA7CV;AACF;AA+CI;EACI,iBAAA;AA7CR;AAiDI;AADJ;IAEQ,kBAAA;AA7CN;AACF;AA8CI;EACI,iBAAA;EACA,qBAAA;EACA,gBAAA;AA5CR;AA8CI;EACI,qBAAA;EACA,gBAAA;EACA,iBAAA;EACA,cAAA;AA5CR;AA+CA;EACI,aAAA;EACA,mBAAA;AA5CJ;AA6CI;EACI,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,aAAA;EACA,cAAA;EACA,yBAAA;EACA,kBAAA;EACA,oBAAA;AA3CR;AA4CQ;EACI,iBAAA;AA1CZ;AA4CQ;EACI,WAAA;EACA,YAAA;EACA,WAAA;AA1CZ","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.main-header {\n    position: relative;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background-color: white;\n    border-top: 1rem solid #778492;\n    box-shadow: 0 2px 8px -4px rgba(0, 0, 0, 0.2);\n    .container {\n        position: relative;\n    }\n    &__wrap {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        padding: 3rem 0;\n        @media screen and (max-width: 768px) {\n            flex-wrap: wrap;\n            flex-direction: column;\n            justify-content: center;\n        }\n    }\n    .logo {\n        position: relative;\n        margin-right: 3rem;\n        width: 18rem;\n        height: 18rem;\n        z-index: 2;\n        border-radius: 50%;\n        overflow: hidden;\n        transition: all .4s;\n        @media screen and (max-width: 768px) {\n            margin-right: 0;\n        }\n        &:hover {\n            filter: blur(0.1rem) grayscale(1);\n            transform: scale(0.9);\n        }\n        img {\n            position: absolute;\n            top: 0;\n            left: 0;\n            width: 100%;\n            height: 100%;\n            object-fit: cover;\n        }\n    }\n    &__socials {\n        @media screen and (max-width: 768px) {\n            margin-bottom: 3rem;\n            justify-content: center;\n        }\n    }\n    &__profile {\n        margin-right: auto;\n        @media screen and (max-width: 768px) {\n            margin-right: 0;\n        }\n    }\n    .btn {\n        margin-left: 1rem;\n    }\n}\n.profile {\n    @media screen and (max-width: 768px) {\n        text-align: center;\n    }\n    &__title {\n        font-size: 3.8rem;\n        margin-bottom: 0.5rem;\n        margin-top: 3rem;\n    }\n    &__subtitle {\n        margin-bottom: 1.5rem;\n        font-weight: 400;\n        font-size: 2.4rem;\n        color: #778492;\n    }\n}\n.socials {\n    display: flex;\n    align-items: center;\n    a {\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        width: 3.6rem;\n        height: 3.6rem;\n        background-color: darken(#ccc, 20%);\n        border-radius: 50%;\n        transition: all .4s;\n        &:hover {\n            background: green;\n        }\n        svg {\n            width: 2rem;\n            height: auto;\n            fill: white;\n        }\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -96428,17 +96490,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _HeaderFront_vue_vue_type_template_id_0535cadb___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HeaderFront.vue?vue&type=template&id=0535cadb& */ "./resources/js/components/front/HeaderFront.vue?vue&type=template&id=0535cadb&");
-/* harmony import */ var _HeaderFront_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HeaderFront.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/components/front/HeaderFront.vue?vue&type=style&index=0&lang=scss&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _HeaderFront_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HeaderFront.vue?vue&type=script&lang=js& */ "./resources/js/components/front/HeaderFront.vue?vue&type=script&lang=js&");
+/* harmony import */ var _HeaderFront_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./HeaderFront.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/components/front/HeaderFront.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 ;
 
 
 /* normalize component */
 
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  script,
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _HeaderFront_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _HeaderFront_vue_vue_type_template_id_0535cadb___WEBPACK_IMPORTED_MODULE_0__.render,
   _HeaderFront_vue_vue_type_template_id_0535cadb___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
@@ -97461,6 +97525,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Block_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Block.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/front/Block.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Block_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/front/HeaderFront.vue?vue&type=script&lang=js&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/front/HeaderFront.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderFront_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./HeaderFront.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/front/HeaderFront.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HeaderFront_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -98933,42 +99013,57 @@ var render = function () {
           ]),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "btn-wrap" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: " btn",
-              attrs: {
-                target: "__blank",
-                href: "https://telegram.im/@serii_burduja",
+        _c(
+          "div",
+          { staticClass: "btn-wrap" },
+          [
+            _vm._m(1),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: " btn",
+                attrs: {
+                  target: "__blank",
+                  href: "https://telegram.im/@serii_burduja",
+                },
               },
-            },
-            [
-              _c("div", { staticClass: "btn__wrap" }, [
-                _c(
-                  "svg",
-                  {
-                    attrs: {
-                      xmlns: "http://www.w3.org/2000/svg",
-                      viewBox: "0 0 496 512",
-                    },
-                  },
-                  [
-                    _c("path", {
+              [
+                _c("div", { staticClass: "btn__wrap" }, [
+                  _c(
+                    "svg",
+                    {
                       attrs: {
-                        d: "M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z",
+                        xmlns: "http://www.w3.org/2000/svg",
+                        viewBox: "0 0 496 512",
                       },
-                    }),
-                  ]
-                ),
-                _vm._v(" "),
-                _c("span", [_vm._v("Telegram")]),
-              ]),
-            ]
-          ),
-        ]),
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          d: "M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z",
+                        },
+                      }),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("Telegram")]),
+                ]),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "btn", attrs: { to: { name: "login" } } },
+              [
+                _c("div", { staticClass: "btn__wrap" }, [
+                  _c("span", [_vm._v("Login")]),
+                ]),
+              ]
+            ),
+          ],
+          1
+        ),
       ]),
     ]),
   ])

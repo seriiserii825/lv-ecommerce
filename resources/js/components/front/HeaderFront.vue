@@ -35,11 +35,21 @@
                             <span>Telegram</span>
                         </div>
                     </a>
+                    <router-link :to="{name: 'login'}" class="btn">
+                        <div class="btn__wrap">
+                            <span>Login</span>
+                        </div>
+                    </router-link>
                 </div>
             </div>
         </div>
     </header>
 </template>
+<script>
+export default {
+
+}
+</script>
 <style lang="scss">
 .main-header {
     position: relative;
