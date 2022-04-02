@@ -1,9 +1,15 @@
 <template>
     <admin-layout>
         <el-row class="mb-3">
-            <router-link :to="{ name: 'admin.portfolio.create' }">
-                <el-button type="success">Create</el-button>
-            </router-link>
+            <el-col :span="6">
+                <router-link :to="{ name: 'admin.portfolio.create' }">
+                    <el-button type="success">Create</el-button>
+                </router-link>
+            </el-col>
+            <el-col :span="3">Count: {{ items.length }}</el-col>
+            <el-col :span="6">
+                <el-input placeholder="Search..." type="text" v-model="search"></el-input>
+            </el-col>
         </el-row>
         <admin-table>
             <table>
@@ -77,6 +83,7 @@ export default {
             fullscreenLoading: false,
             sort_field: "created_at",
             sort_direction: "desc",
+            search: ""
         };
     },
     components: {
@@ -96,7 +103,8 @@ export default {
             this.getItems();
         },
         getItems() {
-            axios.get("/api/portfolio/" + "?sort_field=" + this.sort_field + "&sort_direction=" + this.sort_direction)
+            const url = "/api/portfolio/" + "?sort_field=" + this.sort_field + "&sort_direction=" + this.sort_direction + "&s=" + this.search;
+            axios.get(url)
                 .then((res) => {
                     this.items = res.data.data;
                 })
@@ -141,20 +149,15 @@ export default {
             }).format(date).split(" ").join("-");
         }
     },
+    watch: {
+        search(current, old) {
+            if (current !== old) {
+                this.getItems();
+            }
+        }
+    },
     created() {
         this.getItems();
-        // axios
-        //     .get("/api/csv")
-        //     .then((res) => {
-        //         const result = res.data.insert_data;
-        //         console.log(result, 'result')
-        //         // result.forEach(item => {
-        //         //     console.log(JSON.stringify(item, null, 4));
-        //         // });
-        //     })
-        //     .catch((error) => {
-        //         console.log(error, "error");
-        //     });
     },
 };
 </script>

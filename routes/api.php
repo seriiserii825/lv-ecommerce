@@ -28,7 +28,6 @@ Route::get('/front', [\App\Http\Controllers\FrontController::class, 'index']);
 
 Route::group(["middleware" => "auth:sanctum"], function () {
     Route::get("/admin", [AdminController::class, "index"]);
-//    Route::get("/csv", [\App\Http\Controllers\Api\PortfolioController::class, "importCsv"]);
     Route::resource('user', "App\Http\Controllers\Api\UserController");
     Route::apiResources([
         'media' => 'App\Http\Controllers\Api\MediaController',

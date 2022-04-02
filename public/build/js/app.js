@@ -9612,6 +9612,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -9623,7 +9629,8 @@ __webpack_require__.r(__webpack_exports__);
       items: [],
       fullscreenLoading: false,
       sort_field: "created_at",
-      sort_direction: "desc"
+      sort_direction: "desc",
+      search: ""
     };
   },
   components: {
@@ -9646,7 +9653,8 @@ __webpack_require__.r(__webpack_exports__);
     getItems: function getItems() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/portfolio/" + "?sort_field=" + this.sort_field + "&sort_direction=" + this.sort_direction).then(function (res) {
+      var url = "/api/portfolio/" + "?sort_field=" + this.sort_field + "&sort_direction=" + this.sort_direction + "&s=" + this.search;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get(url).then(function (res) {
         _this.items = res.data.data;
       })["catch"](function (error) {
         console.log(error, "error");
@@ -9686,19 +9694,15 @@ __webpack_require__.r(__webpack_exports__);
       }).format(date).split(" ").join("-");
     }
   },
+  watch: {
+    search: function search(current, old) {
+      if (current !== old) {
+        this.getItems();
+      }
+    }
+  },
   created: function created() {
-    this.getItems(); // axios
-    //     .get("/api/csv")
-    //     .then((res) => {
-    //         const result = res.data.insert_data;
-    //         console.log(result, 'result')
-    //         // result.forEach(item => {
-    //         //     console.log(JSON.stringify(item, null, 4));
-    //         // });
-    //     })
-    //     .catch((error) => {
-    //         console.log(error, "error");
-    //     });
+    this.getItems();
   }
 });
 
@@ -101215,12 +101219,41 @@ var render = function () {
         { staticClass: "mb-3" },
         [
           _c(
-            "router-link",
-            { attrs: { to: { name: "admin.portfolio.create" } } },
+            "el-col",
+            { attrs: { span: 6 } },
             [
-              _c("el-button", { attrs: { type: "success" } }, [
-                _vm._v("Create"),
-              ]),
+              _c(
+                "router-link",
+                { attrs: { to: { name: "admin.portfolio.create" } } },
+                [
+                  _c("el-button", { attrs: { type: "success" } }, [
+                    _vm._v("Create"),
+                  ]),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("el-col", { attrs: { span: 3 } }, [
+            _vm._v("Count: " + _vm._s(_vm.items.length)),
+          ]),
+          _vm._v(" "),
+          _c(
+            "el-col",
+            { attrs: { span: 6 } },
+            [
+              _c("el-input", {
+                attrs: { placeholder: "Search...", type: "text" },
+                model: {
+                  value: _vm.search,
+                  callback: function ($$v) {
+                    _vm.search = $$v
+                  },
+                  expression: "search",
+                },
+              }),
             ],
             1
           ),
