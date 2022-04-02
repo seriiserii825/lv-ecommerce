@@ -1,6 +1,6 @@
 import authRoutes from "./routes/authRoutes";
 import categoryRoutes from "./routes/categoryRoutes";
-import portfolioRoutes from "./routes/postRoutes";
+import portfolioRoutes from "./routes/portfolioRoutes";
 import postRoutes from "./routes/postRoutes";
 import mediaRoutes from "./routes/mediaRoutes";
 import typeRoutes from "./routes/typeRoutes";

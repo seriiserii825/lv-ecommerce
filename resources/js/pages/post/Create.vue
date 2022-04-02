@@ -24,7 +24,7 @@
                 <el-row>
                     <el-col :span="6">
                         <el-form-item label="Category">
-                            <el-select v-model="form.category" placeholder="Select">
+                            <el-select v-model="form.category_id" placeholder="Select">
                                 <el-option
                                     v-for="item in categories"
                                     :key="item.id"
@@ -33,36 +33,18 @@
                                 </el-option>
                             </el-select>
                         </el-form-item>
-                        <small class="form--error" v-if="errors && errors.category_id">{{ errors.category_id[0] }}</small>
-                    </el-col>
-
-                    <el-col :span="6">
-                        <el-form-item label="Image">
-                            <el-button type="primary" @click="showMediaGrid = true"
-                            >Add image
-                            </el-button
-                            >
-                            <images-thumbs :images="form.images"></images-thumbs>
-                        </el-form-item>
-                        <small class="form--error" v-if="errors && errors.image">{{
-                                errors.image[0]
+                        <small class="form--error" v-if="errors && errors.category_id">{{
+                                errors.category_id[0]
                             }}</small>
                     </el-col>
                 </el-row>
                 <el-row>
-                    <el-form-item label="Text">
-                        <div class="form-block__editor">
-                            <m-editor
-                                v-model="form.text"
-                                :debounce="true"
-                                :debounce-wait="500"
-                                theme="dark"
-                                @on-change="handleChange"
-                            />
-                            <!--                        <div class="m-editor-preview" v-html="markdownContent"></div>-->
-                        </div>
-                        <small class="form--error" v-if="errors && errors.text">{{ errors.text[0] }}</small>
-                    </el-form-item>
+                    <el-col :span="12">
+                        <el-form-item label="Text">
+                            <mavon-editor v-model="form.text"/>
+                            <small class="form--error" v-if="errors && errors.text">{{ errors.text[0] }}</small>
+                        </el-form-item>
+                    </el-col>
                 </el-row>
                 <el-row>
                     <el-col :span="6">
@@ -75,22 +57,16 @@
                 </el-row>
             </el-form>
         </form-block>
-        <media-grid
-            @emit_images="emit_images"
-            @handler="showMediaGrid = false"
-            v-if="showMediaGrid"
-            :single="false"
-        />
     </admin-layout>
 </template>
 <script>
+import {mavonEditor} from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
 import FormBlock from "../../components/FormBlock";
 import AdminLayout from "../../layouts/AdminLayout.vue";
 import FormComponent from "../../components/FormComponent.vue";
-import mEditor from 'simple-m-editor'
 import MediaGrid from "../../components/admin/MediaGrid";
 import ImagesThumbs from "../../components/admin/ImagesThumbs";
-import 'simple-m-editor/dist/simple-m-editor.css'
 
 export default {
     data() {
@@ -99,31 +75,21 @@ export default {
                 title: "",
                 slug: "",
                 text: '',
-                image: "",
                 category_id: ""
             },
             errors: {},
-            markdownContent: '',
             categories: [],
-            showMediaGrid: false,
         };
     },
     components: {
-        mEditor,
         FormBlock,
         AdminLayout,
         FormComponent,
         MediaGrid,
-        ImagesThumbs
+        ImagesThumbs,
+        mavonEditor
     },
     methods: {
-        emit_images(images) {
-            this.form.images = images;
-            this.form.image = this.form.images[0];
-        },
-        handleChange(data) {
-            this.markdownContent = data.htmlContent
-        },
         titleChange() {
             const title = this.form.title.toLowerCase();
             this.form.slug = title.replace(/ /, '-');
@@ -136,7 +102,7 @@ export default {
                         type: "success",
                         message: "Post was created",
                     });
-                    this.$router.push({name: "admin.category_id"});
+                    this.$router.push({name: "admin.post"});
                 })
                 .catch((error) => {
                     this.errors = error.response.data.errors;
@@ -144,7 +110,7 @@ export default {
         },
     },
     mounted() {
-        axios.get("/api/category_id").then(res => {
+        axios.get("/api/category").then(res => {
             this.categories = res.data.data;
         }).catch(error => console.log(error, 'error'));
     }

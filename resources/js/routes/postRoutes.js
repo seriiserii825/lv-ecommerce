@@ -1,22 +1,22 @@
-import PortfolioIndex from "./../pages/portfolio/Index.vue";
-import PortfolioCreate from "./../pages/portfolio/Create.vue";
-import PortfolioEdit from "./../pages/portfolio/Edit.vue";
+import PostIndex from "./../pages/post/Index.vue";
+import PostCreate from "./../pages/post/Create.vue";
+import PostEdit from "./../pages/post/Edit.vue";
 
-const portfolioRoutes = [
+const postRoutes = [
     {
-        path: "/admin/portfolio",
-        component: PortfolioIndex,
-        name: "admin.portfolio",
+        path: "/admin/post",
+        component: PostIndex,
+        name: "admin.post",
     },
     {
-        path: "/admin/portfolio/create",
-        component: PortfolioCreate,
-        name: "admin.portfolio.create",
+        path: "/admin/post/create",
+        component: PostCreate,
+        name: "admin.post.create",
     },
     {
-        path: "/admin/portfolio/edit/:id",
-        component: PortfolioEdit,
-        name: "admin.portfolio.edit",
+        path: "/admin/post/edit/:id",
+        component: PostEdit,
+        name: "admin.post.edit",
     },
 ];
-export default portfolioRoutes;
+export default postRoutes;

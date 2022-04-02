@@ -11445,6 +11445,10 @@ ul {
   color: red;
 }
 
+.router-link-active {
+  color: white !important;
+}
+
 .btn-wrap {
   display: flex;
   align-items: center;

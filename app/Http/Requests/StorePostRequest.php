@@ -26,7 +26,6 @@ class StorePostRequest extends FormRequest
         return [
             'title' => 'required|string',
             'slug' => 'required|string|unique:posts',
-            'image' => 'required|string',
             'category_id' => 'required|integer',
             'text' => 'required|string',
         ];

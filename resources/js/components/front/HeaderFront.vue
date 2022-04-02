@@ -35,9 +35,14 @@
                             <span>Telegram</span>
                         </div>
                     </a>
-                    <router-link :to="{name: 'login'}" class="btn">
+                    <router-link v-if="!is_auth" :to="{name: 'login'}" class="btn">
                         <div class="btn__wrap">
                             <span>Login</span>
+                        </div>
+                    </router-link>
+                    <router-link v-else :to="{name: 'admin.index'}" class="btn">
+                        <div class="btn__wrap">
+                            <span>Admin</span>
                         </div>
                     </router-link>
                 </div>
@@ -47,7 +52,23 @@
 </template>
 <script>
 export default {
-
+    data() {
+        return {
+            is_auth: false,
+        };
+    },
+    methods: {
+        handleSelect(key, keyPath) {
+            console.log(key, keyPath);
+        },
+    },
+    created() {
+        axios.get('/api/front').then(res => {
+            this.is_auth = res.data.user;
+        }).catch(error => {
+            this.is_auth = error.response.data.user;
+        });
+    }
 }
 </script>
 <style lang="scss">
