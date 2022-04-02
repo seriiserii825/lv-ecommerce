@@ -9,9 +9,25 @@
             <table>
                 <thead>
                 <tr>
-                    <th>Id</th>
+                    <th>
+                        <table-sort-header
+                            title="Id"
+                            table_column="id"
+                            @sort_table="sort_table"
+                            :sort_field="sort_field"
+                            :sort_direction="sort_direction"
+                        ></table-sort-header>
+                    </th>
                     <th>Image</th>
-                    <th>Title</th>
+                    <th>
+                        <table-sort-header
+                            title="Title"
+                            table_column="title"
+                            @sort_table="sort_table"
+                            :sort_field="sort_field"
+                            :sort_direction="sort_direction"
+                        ></table-sort-header>
+                    </th>
                     <th style="width: 20rem;">Domain</th>
                     <th>Type</th>
                     <th>Date</th>
@@ -49,6 +65,7 @@
 </template>
 <script>
 import axios from "axios";
+import TableSortHeader from "../../components/admin/TableSortHeader";
 import FormBlock from "../../components/FormBlock";
 import AdminLayout from "./../../layouts/AdminLayout.vue";
 import AdminTable from "../../components/admin/AdminTable.vue";
@@ -58,14 +75,35 @@ export default {
         return {
             items: [],
             fullscreenLoading: false,
+            sort_field: "created_at",
+            sort_direction: "desc",
         };
     },
     components: {
+        TableSortHeader,
         FormBlock,
         AdminLayout,
         AdminTable,
     },
     methods: {
+        sort_table(field) {
+            if (this.sort_field === field) {
+                this.sort_direction = this.sort_direction === "asc" ? "desc" : "asc";
+            } else {
+                this.sort_field = field;
+                this.sort_direction = "asc";
+            }
+            this.getItems();
+        },
+        getItems() {
+            axios.get("/api/portfolio/" + "?sort_field=" + this.sort_field + "&sort_direction=" + this.sort_direction)
+                .then((res) => {
+                    this.items = res.data.data;
+                })
+                .catch((error) => {
+                    console.log(error, "error");
+                });
+        },
         remove(id) {
             this.$confirm("This will permanently delete. Continue?", "Warning", {
                     confirmButtonText: "OK",
@@ -94,16 +132,6 @@ export default {
                     });
                 });
         },
-        getItems() {
-            axios
-                .get("/api/portfolio")
-                .then((res) => {
-                    this.items = res.data.data;
-                })
-                .catch((error) => {
-                    console.log(error, "error");
-                });
-        },
         fDate(value) {
             let date = new Date(value)
             return new Intl.DateTimeFormat('en-GB', {
@@ -115,6 +143,18 @@ export default {
     },
     created() {
         this.getItems();
+        // axios
+        //     .get("/api/csv")
+        //     .then((res) => {
+        //         const result = res.data.insert_data;
+        //         console.log(result, 'result')
+        //         // result.forEach(item => {
+        //         //     console.log(JSON.stringify(item, null, 4));
+        //         // });
+        //     })
+        //     .catch((error) => {
+        //         console.log(error, "error");
+        //     });
     },
 };
 </script>

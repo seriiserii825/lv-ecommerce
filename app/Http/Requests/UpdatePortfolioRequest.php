@@ -25,12 +25,7 @@ class UpdatePortfolioRequest extends FormRequest
     public function rules()
     {
         return [
-            "title" => [
-                'required',
-                Rule::unique("portfolios")
-                    ->ignore($this->title)
-                    ->where('title', $this->title)
-            ],
+            'title' => 'required|unique:portfolios,title,' . $this->title . ',title',
             "domain" => 'required|string',
             "image" => 'required|string',
             "type_id" => 'required|integer',
