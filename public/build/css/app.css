@@ -11443,4 +11443,65 @@ ul {
   color: red;
 }
 
+.btn-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3.2rem;
+  height: 4.5rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  background: #54BA4E;
+  border-radius: 0.5rem;
+  transition: all 0.4s;
+  cursor: pointer;
+  overflow: hidden;
+}
+.btn:hover {
+  color: white;
+}
+.btn:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}
+.btn:hover svg {
+  position: relative;
+  transform: scale(1.2);
+}
+.btn__wrap {
+  position: relative;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ff0073;
+  transition: all 0.4s;
+  transform: scale(0);
+  opacity: 0;
+  z-index: 1;
+}
+.btn svg {
+  margin-right: 1rem;
+  width: 2rem;
+  height: auto;
+  fill: white;
+  transition: all 0.4s;
+}
+
 /*# sourceMappingURL=app.css.map*/
