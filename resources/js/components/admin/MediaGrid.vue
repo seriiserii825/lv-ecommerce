@@ -7,6 +7,7 @@
                 @input="searchInput"
                 type="text"
                 placeholder="Search media...."
+                ref="search"
             />
             <div @click="closeMediaGrid" class="el-icon-circle-close"></div>
         </header>
@@ -88,11 +89,7 @@ export default {
     },
     mounted() {
         this.getItems();
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape") {
-                this.closeMediaGrid();
-            }
-        });
+        this.$refs.search.focus();
     },
 };
 </script>

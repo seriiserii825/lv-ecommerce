@@ -16,7 +16,6 @@
                 />
             </el-col>
         </el-row>
-        <h2 class="admin-layout__title">List media</h2>
         <ul class="media-list">
             <li v-for="item in searchedItems" :key="item.id">
                 <img :src="item.path" alt=""/>

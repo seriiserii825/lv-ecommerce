@@ -42,7 +42,6 @@ export default {
 </script>
 <style lang="scss">
 .admin-layout {
-  min-height: 300vh;
   background-color: #444;
   &__search {
     width: 30rem;

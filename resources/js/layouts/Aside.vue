@@ -88,7 +88,7 @@
 </template>
 <style lang="scss">
 .el-aside {
-    min-height: 300vh;
+    min-height: 100vh;
     background-color: #333;
     .el-menu {
         background-color: #333;

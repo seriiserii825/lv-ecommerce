@@ -1,9 +1,8 @@
-
 <template>
     <div class="media-grid-item" :class="{ active: active }" @click="toggleImage">
         <el-checkbox v-model="checked">Option</el-checkbox>
         <h4 class="media-grid-item__title">{{ shortTitle(title) }}</h4>
-        <img :src="path" alt="" />
+        <img :src="path" alt=""/>
     </div>
 </template>
 <script>
@@ -82,6 +81,9 @@ export default {
         z-index: 2;
         .el-checkbox__label {
             display: none;
+        }
+        &__inner {
+            left: 0.4rem;
         }
     }
 }

@@ -11,7 +11,7 @@ class MediaController extends Controller
 {
     public function index()
     {
-        return MediaResource::collection(Media::query()->orderByDesc('created_at')->get());
+        return MediaResource::collection(Media::query()->orderBy('title')->get());
     }
 
     public function store(Request $request)
