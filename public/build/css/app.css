@@ -11299,6 +11299,8 @@ body {
   position: relative;
   margin: 0;
   font-size: 1.8rem;
+  color: #49515a;
+  background-color: #DAE3E7;
 }
 body::after {
   content: "";
