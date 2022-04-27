@@ -2,9 +2,9 @@
     <header class="main-header">
         <div class="container">
             <div class="main-header__wrap">
-                <div class="logo">
+                <router-link to="/" class="logo">
                     <img src="https://seriiburduja.ru/wp-content/uploads/2022/03/me.jpg" alt="">
-                </div>
+                </router-link>
                 <div class="main-header__profile profile">
                     <h1 class="profile__title">Сергей Бурдужа</h1>
                     <h2 class="profile__subtitle">Web App Developer</h2>
@@ -26,6 +26,7 @@
                             <span>Portfolio</span>
                         </div>
                     </a>
+                    <a class="btn" href="/home">Home</a>
                     <a target="__blank" href="https://telegram.im/@serii_burduja" class=" btn">
                         <div class="btn__wrap">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
@@ -62,13 +63,13 @@ export default {
             console.log(key, keyPath);
         },
     },
-    created() {
-        axios.get('/api/front').then(res => {
-            this.is_auth = res.data.user;
-        }).catch(error => {
-            this.is_auth = error.response.data.user;
-        });
-    }
+    // created() {
+    //     axios.get('/api/front').then(res => {
+    //         this.is_auth = res.data.user;
+    //     }).catch(error => {
+    //         this.is_auth = error.response.data.user;
+    //     });
+    // }
 }
 </script>
 <style lang="scss">

@@ -14,10 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{any}', function () {
+//Route::get('/{any}', function () {
+//    return view('welcome');
+//})->where('any', '.*');
+
+Route::get('/admin/{admin}', function () {
     return view('welcome');
-})->where('any', '.*');
+})->where('admin', '.*');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

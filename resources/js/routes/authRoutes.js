@@ -5,8 +5,8 @@ import Logout from "./../pages/Logout.vue";
 import Home from "./../pages/Home.vue";
 
 const authRoutes = [
-    { path: "/", component: Home, name: "home" }, // auth
-    { path: "/admin", component: Admin, name: "admin.index" },
+    // { path: "/home", component: Home, name: "home" }, // auth
+    { path: "/admin/index", component: Admin, name: "admin.index" },
     { path: "/register", component: Register, name: "register" },
     { path: "/login", component: Login, name: "login" },
     { path: "/logout", component: Logout, name: "logout" },

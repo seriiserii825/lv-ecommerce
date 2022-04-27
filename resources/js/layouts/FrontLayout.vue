@@ -20,12 +20,12 @@ export default {
             console.log(key, keyPath);
         },
     },
-    created() {
-        axios.get('/api/front').then(res => {
-            this.is_auth = res.data.user;
-        }).catch(error => {
-            this.is_auth = error.response.data.user;
-        });
-    }
+    // created() {
+    //     axios.get('/api/front').then(res => {
+    //         this.is_auth = res.data.user;
+    //     }).catch(error => {
+    //         this.is_auth = error.response.data.user;
+    //     });
+    // }
 };
 </script>

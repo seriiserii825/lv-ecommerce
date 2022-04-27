@@ -14,10 +14,10 @@
     </el-menu>
     <el-menu class="el-menu-demo main-menu" mode="horizontal">
       <el-menu-item index="1">
-        <router-link class="header-admin__link" :to="{ name: 'home' }">
+        <a href="/" class="header-admin__link">
           <i class="el-icon-s-home"></i>
           <span>Home</span>
-        </router-link>
+        </a>
       </el-menu-item>
       <el-menu-item index="2">
         <a @click.prevent="logout" href="#">Logout</a>

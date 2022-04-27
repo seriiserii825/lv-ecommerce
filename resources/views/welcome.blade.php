@@ -17,7 +17,6 @@
             font-weight: bold;
             color: red;
         }
-
     </style>
 </head>
 
@@ -27,5 +26,4 @@
     </div>
     <script src="{{ mix('js/app.js', 'build') }}" async defer></script>
 </body>
-
 </html>
