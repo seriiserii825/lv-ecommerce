@@ -1,0 +1,32 @@
+.menu {
+    a {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 3rem;
+        font-size: 1.8rem;
+        text-decoration: none;
+        color: white;
+        &:hover {
+            &::before {
+                opacity: 1;
+            }
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 1.3rem;
+            right: -3rem;
+            width: 2rem;
+            height: 2px;
+            background-color: $accent;
+            opacity: 0;
+            transition: all .4s;
+        }
+        &.active {
+            color: $accent;
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+}

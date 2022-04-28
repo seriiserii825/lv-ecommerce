@@ -8,7 +8,7 @@ const authRoutes = [
     // { path: "/home", component: Home, name: "home" }, // auth
     { path: "/admin/index", component: Admin, name: "admin.index" },
     { path: "/register", component: Register, name: "register" },
-    { path: "/login", component: Login, name: "login" },
+    { path: "/admin/login", component: Login, name: "login" },
     { path: "/logout", component: Logout, name: "logout" },
 ];
 

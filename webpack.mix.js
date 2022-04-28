@@ -1,8 +1,6 @@
 const mix = require("laravel-mix");
 const path = require("path");
-
 let productionSourceMaps = false;
-
 mix.setPublicPath("public/build")
     .setResourceRoot("build")
     .js("resources/js/app.js", "js")
@@ -20,6 +18,8 @@ mix.setPublicPath("public/build")
             "public/build/js/app.js", // Generated .js file
             "app/**/*.+(html|php)", // Generic .html and/or .php files [no specific platform]
             "resources/js/**/*.vue", // Generic .html and/or .php files [no specific platform]
+            "resources/js/**/*.js", // Generic .html and/or .php files [no specific platform]
+            "resources/sass/**/*.scss", // Generic .html and/or .php files [no specific platform]
             "resources/views/**/*.php", // Laravel-specific view files
         ],
         notify: {
@@ -37,3 +37,5 @@ mix.setPublicPath("public/build")
             },
         },
     });
+
+mix.js('resources/js/main.js', 'js');

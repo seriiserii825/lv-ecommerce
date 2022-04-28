@@ -25,3 +25,15 @@ Route::get('/admin/{admin}', function () {
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+Route::get('/blog', function () {
+    return view('blog');
+})->name('blog');
+Route::get('/services', function () {
+    return view('services');
+})->name('services');
+Route::get('/portfolio', function () {
+    return view('portfolio');
+})->name('portfolio');

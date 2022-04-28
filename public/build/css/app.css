@@ -11510,4 +11510,62 @@ ul {
   transition: all 0.4s;
 }
 
+.default__wrap {
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+.default__menu {
+  padding: 15rem 4rem;
+  flex: 0 0 23rem;
+  background: #191919;
+}
+.default__menu-logo {
+  margin-bottom: 4rem;
+}
+.default__menu-logo .logo {
+  text-align: left;
+}
+.default__content {
+  flex: 1;
+}
+
+.menu a {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 3rem;
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: white;
+}
+.menu a:hover::before {
+  opacity: 1;
+}
+.menu a::before {
+  content: "";
+  position: absolute;
+  top: 1.3rem;
+  right: -3rem;
+  width: 2rem;
+  height: 2px;
+  background-color: #54BA4E;
+  opacity: 0;
+  transition: all 0.4s;
+}
+.menu a.active {
+  color: #54BA4E;
+}
+.menu a.active::before {
+  opacity: 1;
+}
+
+.footer {
+  padding: 6rem 3rem;
+  text-align: center;
+  background-color: black;
+}
+.footer .logo {
+  margin-bottom: 3rem;
+}
+
 /*# sourceMappingURL=app.css.map*/

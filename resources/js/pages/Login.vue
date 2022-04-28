@@ -1,6 +1,6 @@
 <template>
-    <front-layout>
-        <div class="login">
+    <div class="login">
+        <div class="login__form">
             <h2 class="login__title">Login</h2>
             <el-form label-width="120px">
                 <el-form-item label="Login">
@@ -20,7 +20,7 @@
                 </el-form-item>
             </el-form>
         </div>
-    </front-layout>
+    </div>
 </template>
 <script>
 import FrontLayout from "../layouts/FrontLayout.vue";
@@ -60,10 +60,20 @@ export default {
 </script>
 <style lang="scss">
 .login {
-    margin: 0 auto;
-    max-width: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    &__form {
+        padding: 4rem;
+        width: 40rem;
+        background-color: #fff;
+        box-shadow: 0 3px 8px -3px rgba(0, 0, 0, .2);
+        border-radius: 1rem;
+        overflow: hidden;
+    }
     &__title {
-        margin: 4rem;
+        margin-bottom: 2rem;
         text-align: center;
     }
 }
